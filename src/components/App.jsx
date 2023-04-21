@@ -24,8 +24,9 @@ export class App extends Component {
   render() {
     return (
       <Layout>
-        
+        <h2>Phonebook</h2>
         <ContactForm onSave={this.addContact} />
+        <h2>Contacts</h2>
         <ContactList items={this.state.contacts}   onDelete={this.deleteContact}/>
         {/* <GlobalStyle /> */}
       </Layout>

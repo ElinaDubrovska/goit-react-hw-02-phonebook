@@ -20,7 +20,8 @@ export const ContactForm = ({ onSave }) => {
           actions.resetForm();
         }}
        >
-      <Form>
+        
+        <Form>
           <FormField>
             Name
           <Field name="name" />
