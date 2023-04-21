@@ -3,6 +3,7 @@ import { Layout } from './Layout/Layout';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
+import { nanoid } from 'nanoid';
 
 
 export class App extends Component {
@@ -17,11 +18,27 @@ export class App extends Component {
     
   };
 
-  addContact = newContact => {
-    this.setState(prevState => ({
-      contacts: [...prevState.contacts, newContact],
-    }));
-  };
+  addContact = data => {
+    const contact = {
+     id: nanoid,
+     name: data.name,
+     number: data.number,
+   };
+
+   if (this.isDuplicate(contact)) {
+     return alert(`${contact.name} is already in contacts`);
+   }
+   this.setState(prevState => ({
+     contacts: [...prevState.contacts, data]
+   }))
+ 
+ }
+
+ isDuplicate({ name }) {
+   const { contacts } = this.state;
+   const result = contacts.find((item) => item.name === name);
+   return result;
+ }
 
   deleteContact = contactId => {
     this.setState(prevState => ({
