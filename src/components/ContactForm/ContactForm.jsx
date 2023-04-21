@@ -14,6 +14,7 @@ export const ContactForm = ({ onSave }) => {
         initialValues={{
             contacts: [],
             name: '',
+            number: '',
         }}
         onSubmit={(values, actions) => {
           onSave({ ...values, id: nanoid() });
@@ -25,6 +26,12 @@ export const ContactForm = ({ onSave }) => {
           <FormField>
             Name
           <Field name="name" />
+          Number
+          <Field type="tel"
+  name="number"
+  pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+  title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+  required/>
           <ErrorMessage name="name" component="div" />
           </FormField>
           

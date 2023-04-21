@@ -16,3 +16,6 @@ export const Name = styled.h2`
   font-size: 20px;
 `;
 
+export const Number = styled.span`
+font-size:16px;
+`;
