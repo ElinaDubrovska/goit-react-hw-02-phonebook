@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Button, Container, Name, Number } from './ContactCard.styled';
-// import { HiTrash} from 'react-icons/hi';
+
 // import PropTypes from 'prop-types';
 
 export class ContactCard extends Component {

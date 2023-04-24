@@ -1,12 +1,14 @@
 import { Formik, Field } from 'formik';
-// import * as Yup from 'yup';
+import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
 import { Btn, ErrorMessage, Form, FormField } from './ContactForm.styled';
+import PropTypes from 'prop-types';
 
-// const ContactSchema = Yup.object().shape({
-//   name: Yup.string().required('Required field!'),
- 
-// });
+const ContactSchema = Yup.object().shape({
+  name: Yup.string().required('Required field!'),
+  number: Yup.number().positive().required('Required field!'),
+  
+});
 
 export const ContactForm = ({ onSave }) => {
     return (
@@ -16,6 +18,7 @@ export const ContactForm = ({ onSave }) => {
             name: '',
             number: '',
         }}
+        validationSchema={ContactSchema}
         onSubmit={(values, actions) => {
           onSave({ ...values, id: nanoid() });
           actions.resetForm();
@@ -40,3 +43,7 @@ export const ContactForm = ({ onSave }) => {
       </Formik>
     );
   };
+  ContactForm.propTypes = {
+    
+    onSubmit: PropTypes.func
+  }

@@ -5,9 +5,6 @@ position: relative;
 display: flex;
 gap: 10px;
 align-items: center;
-
-
-
 `;
 
 export const Name = styled.h2`
