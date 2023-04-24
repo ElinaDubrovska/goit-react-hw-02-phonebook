@@ -1,7 +1,7 @@
 import { Formik, Field } from 'formik';
 // import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
-import { ErrorMessage, Form, FormField } from './ContactForm.styled';
+import { Btn, ErrorMessage, Form, FormField } from './ContactForm.styled';
 
 // const ContactSchema = Yup.object().shape({
 //   name: Yup.string().required('Required field!'),
@@ -35,7 +35,7 @@ export const ContactForm = ({ onSave }) => {
           <ErrorMessage name="name" component="div" />
           </FormField>
           
-          <button type="submit">Add contact</button>
+          <Btn type="submit">Add contact</Btn>
         </Form>
       </Formik>
     );

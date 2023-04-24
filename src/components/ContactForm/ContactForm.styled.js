@@ -19,3 +19,15 @@ export const ErrorMessage = styled(FormikErrorMessage)`
   font-size: 14px;
   color: red;
 `;
+export const Btn = styled.button`
+
+  margin-top: 10px;
+  width: 100px;
+  height: 25px;
+  color: #333340;
+  border: 1px solid #333340;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #6495ED };
+`
